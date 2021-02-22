@@ -1,4 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+def localProperties = new Properties()
+if (project.rootProject.file('local.properties').canRead()) {
+    localProperties.load(project.rootProject.file("local.properties").newDataInputStream())
+}
+
 buildscript {
     repositories {
         google()
